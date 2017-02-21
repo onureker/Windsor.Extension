@@ -23,7 +23,7 @@ deploy:
 - provider: NuGet
   server: https://www.myget.org/F/windsor-extension/api/v2/package
   api_key:
-    secure: jsZqwydLknpfHT2aAzpNzcsc/Hv+/uzDa7fh2euv3Qv6P30NvClXkw60qhp9X7NQ
+    secure: 68eb4b8b-72bb-4fae-ac48-1b60a34541da
   symbol_server: https://www.myget.org/F/windsor-extension/symbols/api/v2/package
   artifact: /.*\.nupkg/  
 install:
