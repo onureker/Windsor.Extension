@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Castle.Windsor;
+﻿using Castle.Windsor;
 using Castle.Windsor.Installer;
-using Windsor.Extension.Demo.Sample;
+using Windsor.Extension.Demo.Sample.AppSettings;
+using Windsor.Extension.Demo.Sample.DecoratorExtension;
+using Windsor.Extension.Demo.Sample.ResolveByName;
 
 namespace Windsor.Extension.Demo
 {
@@ -22,9 +18,10 @@ namespace Windsor.Extension.Demo
 
         static void Main(string[] args)
         {
-            var mathService = Container.Resolve<IMathService>();
-            int result = mathService.Sum(1, 2);
-            Debug.WriteLine(result);
+            Container.Resolve<DecoratorExtensionDemo>().Run();
+            Container.Resolve<ResolveByNameDemo>().Run();
+            Container.Resolve<AppSettingsDemo>().Run();
         }
+
     }
 }

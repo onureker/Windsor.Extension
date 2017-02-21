@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Windsor.Extension.Demo.Sample
+namespace Windsor.Extension.Demo.Sample.DecoratorExtension
 {
     public class LogDecorator : IMathService
     {

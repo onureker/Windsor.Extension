@@ -2,7 +2,7 @@
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 
-namespace Windsor.Extension.Demo.Sample
+namespace Windsor.Extension.Demo.Sample.DecoratorExtension
 {
     public class Installer: IWindsorInstaller
     {
@@ -12,7 +12,10 @@ namespace Windsor.Extension.Demo.Sample
                 Component
                     .For<IMathService>()
                     .ImplementedBy<DefaultMathService>()
-                    .Decorated().By<LogDecorator>()
+                    .Decorated().By<LogDecorator>(),
+
+                Component
+                    .For<DecoratorExtensionDemo>()
             );
         }
     }

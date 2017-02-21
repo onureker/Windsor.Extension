@@ -1,4 +1,4 @@
-﻿namespace Windsor.Extension.Demo.Sample
+﻿namespace Windsor.Extension.Demo.Sample.DecoratorExtension
 {
     public interface IMathService
     {
