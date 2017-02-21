@@ -58,6 +58,7 @@
     <Compile Include="Resolver\ResolveByNameConvention.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Windsor.Extension.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
