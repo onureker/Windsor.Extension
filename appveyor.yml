@@ -1,0 +1,31 @@
+version: 1.0.1.{build}
+skip_tags: true
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+nuget:
+  account_feed: true
+  project_feed: true
+before_build:
+- cd Source
+- nuget restore
+- cd ..
+build:
+  publish_nuget: true
+  publish_nuget_symbols: true
+  verbosity: minimal
+after_build:
+- cmd: gitlink . -c Debug
+deploy:
+- provider: NuGet
+  server: https://www.myget.org/F/windsor-extension/api/v2/package
+  api_key:
+    secure: jsZqwydLknpfHT2aAzpNzcsc/Hv+/uzDa7fh2euv3Qv6P30NvClXkw60qhp9X7NQ
+  symbol_server: https://www.myget.org/F/windsor-extension/symbols/api/v2/package
+  artifact: /.*\.nupkg/  
+install:
+- cmd: set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
+- cinst gitlink -y
