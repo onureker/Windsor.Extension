@@ -23,7 +23,7 @@ deploy:
 - provider: NuGet
   server: https://www.myget.org/F/windsor-extension/api/v2/package
   api_key:
-    secure: 68eb4b8b-72bb-4fae-ac48-1b60a34541da
+    secure: qco32qivabmt7WfK9zMUWvF2fp9kgk3c7A9ZUu23rvwiXxy1dzS+DjssfBaz15sA
   artifact: /.*\.nupkg/  
 install:
 - cmd: set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
