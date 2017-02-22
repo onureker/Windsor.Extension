@@ -22,7 +22,12 @@ namespace Windsor.Extension.Resolver
 
         public object Resolve(CreationContext context, ISubDependencyResolver contextHandlerResolver, ComponentModel model, DependencyModel dependency)
         {
-            var result = container.Resolve<TService>(dependency.DependencyKey);
+            if (container.Kernel.HasComponent(dependency.DependencyKey))
+            {
+                return container.Resolve<TService>(dependency.DependencyKey);
+            }
+
+            var result = container.Resolve<TService>();
             return result;
         }
     }

@@ -15,7 +15,8 @@ namespace Windsor.Extension.Demo.Sample.ResolveByName
                 Component
                     .For<ILogger>()
                     .ImplementedBy<ConsoleLogger>()
-                    .Named("consoleLogger"),
+                    .Named("consoleLogger")
+                    .IsDefault(),
 
                 Component
                     .For<ILogger>()
