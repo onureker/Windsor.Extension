@@ -19,6 +19,8 @@ namespace Windsor.Extension.Demo
         static void Main(string[] args)
         {
             Container.Resolve<DecoratorExtensionDemo>().Run();
+            Container.Release(Container.Resolve<DecoratorExtensionDemo>());
+
             Container.Resolve<ResolveByNameDemo>().Run();
             Container.Resolve<AppSettingsDemo>().Run();
         }

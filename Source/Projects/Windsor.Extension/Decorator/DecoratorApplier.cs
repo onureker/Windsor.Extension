@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Handlers;
 using Castle.MicroKernel.Registration;
 
 namespace Windsor.Extension.Decorator
 {
+    //TODO: Take o look at goood articel http://kozmic.net/2009/11/15/castle-windsor-lazy-loading/
     public class DecoratorApplier: IResolveExtension
     {
         private IKernel currentKernel;
@@ -21,18 +23,10 @@ namespace Windsor.Extension.Decorator
         public void Init(IKernel kernel, IHandler handler)
         {
             currentKernel = kernel;
-
-            //TODO: Burayı düzelt..
-            /*
-            var alreadyRegisteredTypes = decoratorTypes.Where(kernel.HasComponent).ToArray();
-            if (alreadyRegisteredTypes.Length != 0)
-            {
-                throw  new Exception($"Zaten registered. {alreadyRegisteredTypes[0]}");
-            }
-            */
+            var filteredDecoratorTypes = decoratorTypes.Distinct().Where(type => !kernel.HasComponent(type));
 
             kernel.Register(
-                Classes.From(decoratorTypes)
+                Classes.From(filteredDecoratorTypes)
                     .Pick()
                     .WithService
                     .Self()
