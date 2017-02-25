@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sample.DecoratorExtension\ExceptionDecorator.cs" />
     <Compile Include="Sample.ResolveByName\ResolveByNameDemo.cs" />
     <Compile Include="Sample.AppSettings\AppSettingsDemo.cs" />
     <Compile Include="Sample.AppSettings\Installer.cs" />

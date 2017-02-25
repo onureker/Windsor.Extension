@@ -16,11 +16,15 @@ namespace Windsor.Extension.Demo.Sample.DecoratorExtension
         {
             container.Register(
                 Component
+                    .For<DecoratorExtensionDemo>(),
+
+                Component
                     .For<IMathService>()
                     .ImplementedBy<DefaultMathService>()
                     .Decorated().By<LogDecorator>()
+                    .Decorated().By<ExceptionDecorator>()
                     .ExtendedProperties(new {Name = "Onur"})
-                    .Activator<Temp>()
+                    //.Activator<Temp>()
                     .OnCreate(OnCreate)
                     .OnDestroy(OnDestroy)
             );
