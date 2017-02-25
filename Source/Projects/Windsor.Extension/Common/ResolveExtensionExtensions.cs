@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Castle.Core;
 using Castle.MicroKernel.Handlers;
@@ -47,7 +47,7 @@ namespace Windsor.Extension.Common
         public static TResolveExtension Get<TResolveExtension>(this List<IResolveExtension> extended) 
             where TResolveExtension : IResolveExtension, new()
         {
-            var found = extended.FirstOrDefault(extension => extended.GetType() == typeof(TResolveExtension));
+            var found = extended.FirstOrDefault(extension => extension.GetType() == typeof(TResolveExtension));
             if (found != null)
             {
                 return (TResolveExtension) found;
