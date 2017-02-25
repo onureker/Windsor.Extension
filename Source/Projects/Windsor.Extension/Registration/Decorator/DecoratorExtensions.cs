@@ -1,5 +1,5 @@
 using Windsor.Extension.Common;
-using Windsor.Extension.Decorator;
+using Windsor.Extension.Registration.Decorator;
 
 // ReSharper disable once CheckNamespace
 namespace Castle.MicroKernel.Registration

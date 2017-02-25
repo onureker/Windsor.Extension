@@ -1,7 +1,7 @@
 ﻿using System;
 using Castle.MicroKernel;
 
-namespace Windsor.Extension.Decorator
+namespace Windsor.Extension.Registration.Decorator
 {
     public class DecorationRegistration<TSignature>: DecorationRegistration<TSignature, object>
     {

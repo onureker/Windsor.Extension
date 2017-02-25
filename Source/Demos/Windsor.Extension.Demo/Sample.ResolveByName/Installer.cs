@@ -1,7 +1,10 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using Windsor.Extension.Common;
+using Windsor.Extension.Registration;
 using Windsor.Extension.Resolver;
+using Windsor.Extension.Resolver.ByName;
 
 namespace Windsor.Extension.Demo.Sample.ResolveByName
 {
@@ -11,6 +14,18 @@ namespace Windsor.Extension.Demo.Sample.ResolveByName
         {
             container.Kernel.Resolver.AddSubResolver(new ResolveByNameConvention(container));
 
+            RegisterAllWithGeneric(container);
+            //RegisterAllWithNonGeneric(container);
+            //RegisterOneByOne(container);
+
+            container.Register(
+                Component
+                    .For<ResolveByNameDemo>()
+            );
+        }
+
+        private void RegisterOneByOne(IWindsorContainer container)
+        {
             container.Register(
                 Component
                     .For<ILogger>()
@@ -21,10 +36,33 @@ namespace Windsor.Extension.Demo.Sample.ResolveByName
                 Component
                     .For<ILogger>()
                     .ImplementedBy<TraceLogger>()
-                    .Named("traceLogger"),
+                    .Named("traceLogger")
+            );
+        }
 
-                Component
-                    .For<ResolveByNameDemo>()
+        private void RegisterAllWithNonGeneric(IWindsorContainer container)
+        {
+            container.Register(
+                Classes
+                    .FromAssemblyInThisApplication()
+                    .BasedOn(typeof(ILogger))
+                    .WithService
+                    .FromInterface()
+                    .NamedAsParameter()
+                    .DefaultIs(typeof(TraceLogger))
+            );
+        }
+
+        private void RegisterAllWithGeneric(IWindsorContainer container)
+        {
+            container.Register(
+                Classes
+                    .FromAssemblyInThisApplication()
+                    .BasedOn<ILogger>()
+                    .WithService
+                    .FromInterface()
+                    .NamedAsParameter()
+                    .DefaultIs<ConsoleLogger>()
             );
         }
     }

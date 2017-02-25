@@ -28,17 +28,6 @@ namespace Windsor.Extension.Demo
             Container.Resolve<ResolveByNameDemo>().Run();
             //Container.Resolve<AppSettingsDemo>().Run();
             //Container.Resolve<ExtensionDemo>().Run();
-
-            var handlers = Container.Kernel.GetAssignableHandlers(typeof(object));
-            List<IGrouping<Type, Type>> serviceGroups = handlers.SelectMany(handler => handler.ComponentModel.Services)
-                .GroupBy(type => type)
-                .Where(types => types.Count() > 1)
-                .ToList();
-
-            foreach (var VARIABLE in serviceGroups)
-            {
-                Console.WriteLine(VARIABLE);
-            }
         }
 
     }

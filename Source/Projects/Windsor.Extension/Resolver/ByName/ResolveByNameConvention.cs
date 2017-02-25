@@ -4,7 +4,7 @@ using Castle.MicroKernel;
 using Castle.MicroKernel.Context;
 using Castle.Windsor;
 
-namespace Windsor.Extension.Resolver
+namespace Windsor.Extension.Resolver.ByName
 {
     public class ResolveByNameConvention: ISubDependencyResolver
     {

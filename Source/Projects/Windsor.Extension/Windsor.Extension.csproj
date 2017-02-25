@@ -49,14 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Decorator\DecorationRegistration.cs" />
-    <Compile Include="Decorator\DecoratorApplier.cs" />
-    <Compile Include="Decorator\DecoratorExtensions.cs" />
+    <Compile Include="Registration\RegistrationExtensions.cs" />
+    <Compile Include="Registration\Decorator\DecorationRegistration.cs" />
+    <Compile Include="Registration\Decorator\DecoratorApplier.cs" />
+    <Compile Include="Registration\Decorator\DecoratorExtensions.cs" />
     <Compile Include="Common\Container.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\ResolveExtensionExtensions.cs" />
-    <Compile Include="Resolver\AppSettingsConvention.cs" />
-    <Compile Include="Resolver\ResolveByNameConvention.cs" />
+    <Compile Include="Resolver\AppSettings\AppSettingsConvention.cs" />
+    <Compile Include="Resolver\ByName\ResolveByNameConvention.cs" />
+    <Compile Include="Resolver\ByName\ResolveByNameExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Windsor.Extension.nuspec" />

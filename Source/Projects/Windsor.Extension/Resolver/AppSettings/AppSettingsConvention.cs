@@ -7,7 +7,7 @@ using Castle.Core;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Context;
 
-namespace Windsor.Extension.Resolver
+namespace Windsor.Extension.Resolver.AppSettings
 {
     public class AppSettingsConvention : ISubDependencyResolver
     {

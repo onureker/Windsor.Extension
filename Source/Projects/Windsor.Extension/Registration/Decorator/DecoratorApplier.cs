@@ -5,7 +5,7 @@ using Castle.MicroKernel;
 using Castle.MicroKernel.Handlers;
 using Castle.MicroKernel.Registration;
 
-namespace Windsor.Extension.Decorator
+namespace Windsor.Extension.Registration.Decorator
 {
     //TODO: Take o look at goood article http://kozmic.net/2009/11/15/castle-windsor-lazy-loading/
     public class DecoratorApplier: IResolveExtension
