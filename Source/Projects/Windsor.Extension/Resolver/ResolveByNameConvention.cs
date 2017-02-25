@@ -1,11 +1,12 @@
-﻿using Castle.Core;
+﻿using System.Linq;
+using Castle.Core;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Context;
 using Castle.Windsor;
 
 namespace Windsor.Extension.Resolver
 {
-    public class ResolveByNameConvention<TService>: ISubDependencyResolver
+    public class ResolveByNameConvention: ISubDependencyResolver
     {
         private readonly IWindsorContainer container;
 
@@ -16,18 +17,16 @@ namespace Windsor.Extension.Resolver
 
         public bool CanResolve(CreationContext context, ISubDependencyResolver contextHandlerResolver, ComponentModel model, DependencyModel dependency)
         {
-            var result = dependency.TargetType == typeof(TService);
+            var result = container.Kernel
+                .GetAssignableHandlers(dependency.TargetType)
+                .Any(handler => handler.ComponentModel.Name == dependency.DependencyKey);
+
             return result;
         }
 
         public object Resolve(CreationContext context, ISubDependencyResolver contextHandlerResolver, ComponentModel model, DependencyModel dependency)
         {
-            if (container.Kernel.HasComponent(dependency.DependencyKey))
-            {
-                return container.Resolve<TService>(dependency.DependencyKey);
-            }
-
-            var result = container.Resolve<TService>();
+            var result = container.Resolve(dependency.DependencyKey, dependency.TargetType);
             return result;
         }
     }

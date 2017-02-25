@@ -9,7 +9,7 @@ namespace Windsor.Extension.Demo.Sample.ResolveByName
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Kernel.Resolver.AddSubResolver(new ResolveByNameConvention<ILogger>(container));
+            container.Kernel.Resolver.AddSubResolver(new ResolveByNameConvention(container));
 
             container.Register(
                 Component

@@ -51,9 +51,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sample.DecoratorExtension\ExceptionDecorator.cs" />
+    <Compile Include="Sample.Extension\ExtensionDemo.cs" />
+    <Compile Include="Sample.Extension\GenericRedacter.cs" />
+    <Compile Include="Sample.Extension\Installer.cs" />
+    <Compile Include="Sample.Extension\IRedacter.cs" />
+    <Compile Include="Sample.Extension\RedacterExtensions.cs" />
+    <Compile Include="Sample.Extension\SampleModel.cs" />
+    <Compile Include="Sample.Extension\SampleRedacter.cs" />
     <Compile Include="Sample.ResolveByName\ResolveByNameDemo.cs" />
     <Compile Include="Sample.AppSettings\AppSettingsDemo.cs" />
     <Compile Include="Sample.AppSettings\Installer.cs" />
