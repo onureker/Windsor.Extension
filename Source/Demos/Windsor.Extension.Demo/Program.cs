@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
@@ -21,6 +22,10 @@ namespace Windsor.Extension.Demo
             Container.Install(FromAssembly.This());
             Container.Install(FromAssembly.Containing(typeof(Container)));
         }
+
+
+        //[DebuggerDisplay("Id = {Id}, State = {GetStateForDebugger}")]
+        //[DebuggerTypeProxy(typeof(AsyncLazy<>.DebugView))]
 
         static void Main(string[] args)
         {

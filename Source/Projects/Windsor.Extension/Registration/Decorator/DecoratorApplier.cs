@@ -8,6 +8,7 @@ using Castle.MicroKernel.Registration;
 namespace Windsor.Extension.Registration.Decorator
 {
     //TODO: Take o look at goood article http://kozmic.net/2009/11/15/castle-windsor-lazy-loading/
+    //TODO: Take o look at goood code https://github.com/castleproject/Windsor/blob/master/src/Castle.Facilities.Synchronize/CreateOnUIThreadActivator.cs
     public class DecoratorApplier: IResolveExtension
     {
         private IKernel currentKernel;
