@@ -1,10 +1,10 @@
 using Windsor.Extension.Common;
-using Windsor.Extension.Decorator;
+using Windsor.Extension.Registration.Decorator;
 
 // ReSharper disable once CheckNamespace
 namespace Castle.MicroKernel.Registration
 {
-    public static class Extensions
+    public static class DecoratorExtensions
     {
         public static DecorationRegistration<ComponentRegistration<TService>, TService> Decorated<TService>(this ComponentRegistration<TService> extended)
             where TService : class

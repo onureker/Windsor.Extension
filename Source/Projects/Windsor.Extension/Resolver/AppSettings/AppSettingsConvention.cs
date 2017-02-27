@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Castle.Core;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Context;
 
-namespace Windsor.Extension.Resolver
+namespace Windsor.Extension.Resolver.AppSettings
 {
     public class AppSettingsConvention : ISubDependencyResolver
     {

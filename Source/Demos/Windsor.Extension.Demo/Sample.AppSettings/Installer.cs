@@ -2,6 +2,7 @@
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Windsor.Extension.Resolver;
+using Windsor.Extension.Resolver.AppSettings;
 
 namespace Windsor.Extension.Demo.Sample.AppSettings
 {
