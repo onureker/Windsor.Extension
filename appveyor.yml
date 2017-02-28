@@ -22,7 +22,7 @@ after_build:
 deploy:
 - provider: NuGet
   server: https://www.myget.org/F/windsor-extension/api/v2/package
-  symbol_server: https://www.myget.org/F/windsor-extension/symbols/api/v2/package
+  #symbol_server: https://www.myget.org/F/windsor-extension/symbols/api/v2/package
   api_key:
     secure: qco32qivabmt7WfK9zMUWvF2fp9kgk3c7A9ZUu23rvwiXxy1dzS+DjssfBaz15sA
   artifact: /.*\.nupkg/  
