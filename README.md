@@ -63,4 +63,10 @@ public ResolveByNameDemo(ILogger logger, ILogger consoleLogger, ILogger traceLog
 }
 ```
 
-Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+## Releases
+See the [releases](https://github.com/onureker/Windsor.Extension/releases).
+
+## License
+Windsor Extension is licensed under the [Apache 2.0](http://opensource.org/licenses/Apache-2.0) license. Refer to LICENSE for more information
+
+Icons made by [Freepik](http://www.freepik.com") from [Flaticon](http://www.flaticon.com) is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/)
