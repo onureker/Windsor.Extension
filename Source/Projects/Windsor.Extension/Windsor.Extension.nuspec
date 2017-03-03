@@ -4,11 +4,15 @@
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>$author$</authors>
+    <authors>Onur Eker; Ödül Kanberoğlu</authors>
     <owners>$author$</owners>
     <description>$description$</description>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <projectUrl>https://github.com/onureker/Windsor.Extension</projectUrl>
+    <iconUrl>https://github.com/onureker/Windsor.Extension/tree/master/Resource/Images/Logo.Purple.64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>Initial Release</releaseNotes>
     <copyright>Copyright 2017</copyright>
-    <tags>Castle Windsor Extension Facility</tags>
+    <tags>castle windsor container ioc inversionOfControl extension DependencyInjection</tags>
   </metadata>
 </package>

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Windsor.Extension")]
-[assembly: AssemblyDescription("Castle Windsor Extension Library")]
+[assembly: AssemblyDescription("Extension library for Castle Windsor container. Decorator Registration, ResolveByName resolver, AppSetting resolver")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Bosphorus")]
 [assembly: AssemblyProduct("Windsor.Extension")]
