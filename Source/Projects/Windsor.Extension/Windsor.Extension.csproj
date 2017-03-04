@@ -60,6 +60,8 @@
     <Compile Include="Resolver\AppSettings\AppSettingsConvention.cs" />
     <Compile Include="Resolver\ByName\ResolveByNameConvention.cs" />
     <Compile Include="Resolver\ByName\ResolveByNameExtensions.cs" />
+    <Compile Include="Scope\ContainerExtensions.cs" />
+    <Compile Include="Scope\ByPassInterceptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Windsor.Extension.nuspec" />

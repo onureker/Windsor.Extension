@@ -10,6 +10,8 @@ Some of the features that provided in this libary is
 
 [Sample codes](https://github.com/onureker/Windsor.Extension/tree/master/Source/Demos/Windsor.Extension.Demo) are included in repostory
 
+[![Build Status](https://ci.appveyor.com/api/projects/status/github/onureker/Windsor.Extension?branch=master&svg=true)](https://ci.appveyor.com/project/OnurEker/windsor-extension)
+
 ## Features
 ### Decoration Pattern Registration
 This feature is the one the most needed feature in registration. However there are some tricks to cover this feature, it is too confusing and complex.
