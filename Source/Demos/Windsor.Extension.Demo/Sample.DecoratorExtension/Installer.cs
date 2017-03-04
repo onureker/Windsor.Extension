@@ -56,6 +56,10 @@ namespace Windsor.Extension.Demo.Sample.DecoratorExtension
             this.onDestruction = onDestruction;
         }
 
+        public Temp()
+        {
+        }
+
         public object Create(CreationContext context, Burden burden)
         {
             throw new NotImplementedException();
