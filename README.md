@@ -27,7 +27,9 @@ Also it supports BasedOnDescriptor
 TODO
 
 ### ResolveByParameterName
-This feature is the one the most needed feature in registration too. However there is a legal way registration with DependencyKey. It is hard to re-factor and register.
+This feature provides to ability to resolve any class, if only **constructor parameter is matched with registration name**
+Detailed information can be found at [here](https://github.com/onureker/Windsor.Extension/wiki/Resolve-By-Parameter-Name)
+
 Extension library solves this need just by adding ResolveByNameConvention resolver.
 ```csharp
 container.Kernel.Resolver.AddSubResolver(new ResolveByNameConvention(container));
@@ -37,23 +39,13 @@ And register with name
 Component
     .For<ILogger>()
     .ImplementedBy<ConsoleLogger>()
-    .Named("consoleLogger")
+    .NamedAsParameter()
     .IsDefault(),
 
 Component
     .For<ILogger>()
     .ImplementedBy<TraceLogger>()
-    .Named("traceLogger")
-```
-Or call "NamedAsParameter" extension method
-```csharp
-Classes
-    .FromAssemblyInThisApplication()
-    .BasedOn(typeof(ILogger))
-    .WithService
-    .FromInterface()
     .NamedAsParameter()
-    .DefaultIs(typeof(TraceLogger))
 ```
 That's it. Now you can own them in constructor with constructor parameter name
 ```csharp
