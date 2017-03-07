@@ -3,11 +3,11 @@ using Castle.DynamicProxy;
 
 namespace Windsor.Extension.Scope
 {
-    public class NopInterceptor: IInterceptor
+    public class ByPassInterceptor: IInterceptor
     {
         private readonly Func<IInvocation, bool> applicableFunc;
 
-        public NopInterceptor(Func<IInvocation, bool> applicableFunc)
+        public ByPassInterceptor(Func<IInvocation, bool> applicableFunc)
         {
             this.applicableFunc = applicableFunc;
         }

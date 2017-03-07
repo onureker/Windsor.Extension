@@ -9,12 +9,12 @@ namespace Windsor.Extension.Scope
     public static class ContainerExtensions
     {
         private static readonly ProxyGenerator ProxyGenerator;
-        private static readonly IInterceptor NopRegisterInterceptor;
+        private static readonly IInterceptor ByPassRegisterInterceptor;
 
         static ContainerExtensions()
         {
             ProxyGenerator = new ProxyGenerator();
-            NopRegisterInterceptor = new NopInterceptor(invocation => invocation.Method.Name == "Register");
+            ByPassRegisterInterceptor = new ByPassInterceptor(invocation => invocation.Method.Name == "Register");
         }
 
         public static IWindsorContainer Is<TScope>(this IWindsorContainer extended, TScope scope)
@@ -45,7 +45,7 @@ namespace Windsor.Extension.Scope
                 return extended;
             }
 
-            var decorated = ProxyGenerator.CreateInterfaceProxyWithTarget(extended, ProxyGenerationOptions.Default, NopRegisterInterceptor);
+            var decorated = ProxyGenerator.CreateInterfaceProxyWithTarget(extended, ProxyGenerationOptions.Default, ByPassRegisterInterceptor);
             return decorated;
         }
 
