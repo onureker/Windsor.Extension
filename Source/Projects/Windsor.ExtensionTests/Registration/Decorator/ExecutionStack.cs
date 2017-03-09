@@ -3,22 +3,22 @@ using System.Collections.Generic;
 
 namespace Windsor.ExtensionTests.Registration.Decorator
 {
-    public class ExecutionRegistry
+    public class ExecutionStack
     {
         private readonly IDictionary<Guid, Stack<object>> executionStacks;
 
-        public ExecutionRegistry()
+        public ExecutionStack()
         {
             executionStacks = new Dictionary<Guid, Stack<object>>();
         }
 
-        public void Push(Guid executionId, object instance)
+        public void PushInstance(Guid executionId, object instance)
         {
             var executionStack = GetStack(executionId);
             executionStack.Push(instance);
         }
 
-        public object Pop(Guid executionId)
+        public object PopInstance(Guid executionId)
         {
             var executionStack = GetStack(executionId);
             var result = executionStack.Pop();

@@ -60,11 +60,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registration\Decorator\DefaultCalculator2.cs" />
+    <Compile Include="Registration\Decorator\Calculator2.cs" />
     <Compile Include="Registration\Decorator\DecorationRegistrationTests.cs" />
-    <Compile Include="Registration\Decorator\DefaultCalculator.cs" />
+    <Compile Include="Registration\Decorator\Calculator1.cs" />
     <Compile Include="Registration\Decorator\ExceptionDecorator.cs" />
-    <Compile Include="Registration\Decorator\ExecutionRegistry.cs" />
+    <Compile Include="Registration\Decorator\ExecutionStack.cs" />
     <Compile Include="Registration\Decorator\ICalculator.cs" />
     <Compile Include="Registration\Decorator\LogDecorator.cs" />
   </ItemGroup>
