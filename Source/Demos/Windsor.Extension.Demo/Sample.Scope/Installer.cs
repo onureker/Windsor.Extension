@@ -1,10 +1,7 @@
-﻿using System.Diagnostics;
-using Castle.MicroKernel.Registration;
+﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Windsor.Extension.Demo.Sample.ResolveByName;
-using Windsor.Extension.Registration;
-using Windsor.Extension.Resolver.ByName;
 using Windsor.Extension.Scope;
 
 namespace Windsor.Extension.Demo.Sample.Scope

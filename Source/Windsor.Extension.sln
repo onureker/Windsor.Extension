@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{B6B6FA27
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windsor.Extension.Demo", "Demos\Windsor.Extension.Demo\Windsor.Extension.Demo.csproj", "{44BD3352-0756-4471-9CAE-2E4DD8DB3AA1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B0CD7838-AB35-4B7E-B9E2-EBAF2EFFD119}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

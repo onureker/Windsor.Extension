@@ -9,12 +9,12 @@ namespace Windsor.Extension.Scope
     public static class ContainerExtensions
     {
         private static readonly ProxyGenerator ProxyGenerator;
-        private static readonly IInterceptor NopRegisterInterceptor;
+        private static readonly IInterceptor ByPassRegisterInterceptor;
 
         static ContainerExtensions()
         {
             ProxyGenerator = new ProxyGenerator();
-            NopRegisterInterceptor = new NopInterceptor(invocation => invocation.Method.Name == "Register");
+            ByPassRegisterInterceptor = new ByPassInterceptor(invocation => invocation.Method.Name == "Register");
         }
 
         public static IWindsorContainer Is<TScope>(this IWindsorContainer extended, TScope scope)
@@ -32,6 +32,13 @@ namespace Windsor.Extension.Scope
         public static IWindsorContainer If<TScope>(this IWindsorContainer extended, params TScope[] scopes)
             where TScope : class
         {
+            var result = extended.If<TScope>(scopes.Contains);
+            return result;
+        }
+
+        public static IWindsorContainer If<TScope>(this IWindsorContainer extended, Func<TScope, bool> scopeApplicableFunc)
+            where TScope : class
+        {
             var @dynamic = IsDynamic(extended.GetType());
             if (dynamic)
             {
@@ -39,13 +46,13 @@ namespace Windsor.Extension.Scope
             }
 
             var actual = extended.Resolve<TScope>();
-            var inScope = scopes.Contains(actual);
-            if (inScope)
+            var applicable = scopeApplicableFunc(actual);
+            if (applicable)
             {
                 return extended;
             }
 
-            var decorated = ProxyGenerator.CreateInterfaceProxyWithTarget(extended, ProxyGenerationOptions.Default, NopRegisterInterceptor);
+            var decorated = ProxyGenerator.CreateInterfaceProxyWithTarget(extended, ProxyGenerationOptions.Default, ByPassRegisterInterceptor);
             return decorated;
         }
 
