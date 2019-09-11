@@ -53,8 +53,9 @@ namespace Windsor.Extension.Registration.Decorator
 
         private object ResolveDecorator(IKernel kernel, object instance, Type type)
         {
-            var argument = new { decorated = instance };
-            var result = kernel.Resolve(type, argument);
+            Arguments arguments = new Arguments();
+            arguments.Add("decorated", instance);
+            var result = kernel.Resolve(type, arguments);
             return result;
         }
 

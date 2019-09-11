@@ -1,101 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{44BD3352-0756-4471-9CAE-2E4DD8DB3AA1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Windsor.Extension.Demo</RootNamespace>
-    <AssemblyName>Windsor.Extension.Demo</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+	<OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp2.0;net471</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sample.Scope\Environmentt.cs" />
-    <Compile Include="ObjectExtensions.cs" />
-    <Compile Include="Sample.Scope\Installer.cs" />
-    <Compile Include="Sample.Scope\Perspective.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sample.DecoratorExtension\ExceptionDecorator.cs" />
-    <Compile Include="Sample.Extension\ExtensionDemo.cs" />
-    <Compile Include="Sample.Extension\GenericRedacter.cs" />
-    <Compile Include="Sample.Extension\Installer.cs" />
-    <Compile Include="Sample.Extension\IRedacter.cs" />
-    <Compile Include="Sample.Extension\RedacterExtensions.cs" />
-    <Compile Include="Sample.Extension\SampleModel.cs" />
-    <Compile Include="Sample.Extension\SampleRedacter.cs" />
-    <Compile Include="Sample.ResolveByName\ResolveByNameDemo.cs" />
-    <Compile Include="Sample.AppSettings\AppSettingsDemo.cs" />
-    <Compile Include="Sample.AppSettings\Installer.cs" />
-    <Compile Include="Sample.DecoratorExtension\DecoratorExtensionDemo.cs" />
-    <Compile Include="Sample.ResolveByName\ConsoleLogger.cs" />
-    <Compile Include="Sample.ResolveByName\ILogger.cs" />
-    <Compile Include="Sample.ResolveByName\Installer.cs" />
-    <Compile Include="Sample.ResolveByName\TraceLogger.cs" />
-    <Compile Include="Sample.DecoratorExtension\DefaultMathService.cs" />
-    <Compile Include="Sample.DecoratorExtension\IMathService.cs" />
-    <Compile Include="Sample.DecoratorExtension\Installer.cs" />
-    <Compile Include="Sample.DecoratorExtension\LogDecorator.cs" />
-    <Compile Include="Sample.Scope\ScopeDemo.cs" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <PackageReference Include="Castle.Windsor" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Projects\Windsor.Extension\Windsor.Extension.csproj">
-      <Project>{67a9ff4d-81fe-4d1a-9d6b-f1430adc980b}</Project>
-      <Name>Windsor.Extension</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\..\Projects\Windsor.Extension\Windsor.Extension.csproj" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
