@@ -1,6 +1,7 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using System.Reflection;
 using Windsor.Extension.Common;
 using Windsor.Extension.Registration;
 using Windsor.Extension.Resolver;
@@ -10,6 +11,8 @@ namespace Windsor.Extension.Demo.Sample.ResolveByName
 {
     public class Installer: IWindsorInstaller
     {
+
+        Assembly rootAssembly = typeof(Installer).Assembly;
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Kernel.Resolver.AddSubResolver(new ResolveByNameConvention(container));
@@ -44,7 +47,7 @@ namespace Windsor.Extension.Demo.Sample.ResolveByName
         {
             container.Register(
                 Classes
-                    .FromAssemblyInThisApplication()
+                    .FromAssemblyInThisApplication(rootAssembly)
                     .BasedOn(typeof(ILogger))
                     .WithService
                     .FromInterface()
@@ -57,7 +60,7 @@ namespace Windsor.Extension.Demo.Sample.ResolveByName
         {
             container.Register(
                 Classes
-                    .FromAssemblyInThisApplication()
+                    .FromAssemblyInThisApplication(rootAssembly)
                     .BasedOn<ILogger>()
                     .WithService
                     .FromInterface()
