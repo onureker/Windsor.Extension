@@ -1,4 +1,5 @@
 version: 1.0.{build}
+image: Visual Studio 2017
 skip_tags: true
 assembly_info:
   patch: true
@@ -10,9 +11,7 @@ nuget:
   account_feed: true
   project_feed: true
 before_build:
-- cd Source
-- dotnet restore
-- cd ..
+- cmd: dotnet restore ./Source/Windsor.Extension.sln
 build:
   publish_nuget: true
   publish_nuget_symbols: true
