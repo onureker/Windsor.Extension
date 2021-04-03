@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Windsor.ExtensionTests.Registration.Decorator
+namespace Windsor.Extension.Tests.Registration.Decorator.Components.NonGeneric
 {
-    public class Calculator1: ICalculator
+    public class Calculator2 : ICalculator
     {
         private readonly ExecutionStack executionStack;
 
-        public Calculator1(ExecutionStack executionStack)
+        public Calculator2(ExecutionStack executionStack)
         {
             this.executionStack = executionStack;
         }

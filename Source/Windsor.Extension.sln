@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windsor.Extension", "Projects\Windsor.Extension\Windsor.Extension.csproj", "{67A9FF4D-81FE-4D1A-9D6B-F1430ADC980B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Windsor.Extension", "Projects\Windsor.Extension\Windsor.Extension.csproj", "{67A9FF4D-81FE-4D1A-9D6B-F1430ADC980B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{4562F014-0602-4435-B7B1-6FA33558F2C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{B6B6FA27-938F-41A3-B27E-F71247670794}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windsor.Extension.Demo", "Demos\Windsor.Extension.Demo\Windsor.Extension.Demo.csproj", "{44BD3352-0756-4471-9CAE-2E4DD8DB3AA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Windsor.Extension.Demo", "Demos\Windsor.Extension.Demo\Windsor.Extension.Demo.csproj", "{44BD3352-0756-4471-9CAE-2E4DD8DB3AA1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B0CD7838-AB35-4B7E-B9E2-EBAF2EFFD119}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Windsor.Extension.Tests", "Projects\Windsor.Extension.Tests\Windsor.Extension.Tests.csproj", "{F5582C78-ECDD-4083-AE19-7283B4F3E0A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{44BD3352-0756-4471-9CAE-2E4DD8DB3AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44BD3352-0756-4471-9CAE-2E4DD8DB3AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44BD3352-0756-4471-9CAE-2E4DD8DB3AA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5582C78-ECDD-4083-AE19-7283B4F3E0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5582C78-ECDD-4083-AE19-7283B4F3E0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5582C78-ECDD-4083-AE19-7283B4F3E0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5582C78-ECDD-4083-AE19-7283B4F3E0A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,5 +40,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{67A9FF4D-81FE-4D1A-9D6B-F1430ADC980B} = {4562F014-0602-4435-B7B1-6FA33558F2C8}
 		{44BD3352-0756-4471-9CAE-2E4DD8DB3AA1} = {B6B6FA27-938F-41A3-B27E-F71247670794}
+		{F5582C78-ECDD-4083-AE19-7283B4F3E0A0} = {B0CD7838-AB35-4B7E-B9E2-EBAF2EFFD119}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DFE5E68-16EF-4477-95FF-DE30682E0F13}
 	EndGlobalSection
 EndGlobal

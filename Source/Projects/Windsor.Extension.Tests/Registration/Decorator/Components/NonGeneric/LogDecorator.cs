@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace Windsor.ExtensionTests.Registration.Decorator
+namespace Windsor.Extension.Tests.Registration.Decorator.Components.NonGeneric
 {
-    internal class ExceptionDecorator : ICalculator
+    internal class LogDecorator : ICalculator
     {
         private readonly ICalculator decorated;
         private readonly ExecutionStack executionStack;
 
-        public ExceptionDecorator(ICalculator decorated, ExecutionStack executionStack)
+        public LogDecorator(ICalculator decorated, ExecutionStack executionStack)
         {
             this.decorated = decorated;
             this.executionStack = executionStack;
@@ -15,9 +15,10 @@ namespace Windsor.ExtensionTests.Registration.Decorator
 
         public int Sum(Guid executionId, int x, int y)
         {
-            var sum = decorated.Sum(executionId, x, y);
+            var result = decorated.Sum(executionId, x, y);
             executionStack.PushInstance(executionId, this);
-            return sum;
+            Console.WriteLine("Sum executed");
+            return result;
         }
     }
 }

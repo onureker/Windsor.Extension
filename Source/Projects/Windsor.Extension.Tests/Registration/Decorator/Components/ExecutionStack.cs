@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Windsor.ExtensionTests.Registration.Decorator
+namespace Windsor.Extension.Tests.Registration.Decorator.Components
 {
     public class ExecutionStack
     {
