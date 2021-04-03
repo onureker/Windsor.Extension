@@ -56,23 +56,11 @@ namespace Windsor.Extension.Registration.Decorator
             Arguments arguments = new Arguments();
             object result = null;
 
-            if (type.IsGenericType)
-            {
-                var mutualGenericType = type.GetInterfaces().FirstOrDefault(t => t.IsInstanceOfType(instance));
+            var mutualType = type.GetInterfaces().FirstOrDefault(t => t.IsInstanceOfType(instance));
 
-                if (mutualGenericType != null)
-                {
-                    arguments.AddTyped(mutualGenericType, instance);
-                }
-            }
-            else
+            if (mutualType != null)
             {
-                var mutualType = type.GetInterfaces().FirstOrDefault(t => t.IsInstanceOfType(instance));
-
-                if (mutualType != null)
-                {
-                    arguments.AddTyped(mutualType, instance);
-                }
+                arguments.AddTyped(mutualType, instance);
             }
 
             if (arguments.Count == 0)
