@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Windsor.ExtensionTests.Registration.Decorator
+namespace Windsor.Extension.Tests.Registration.Decorator.Components.NonGeneric
 {
     public interface ICalculator
     {

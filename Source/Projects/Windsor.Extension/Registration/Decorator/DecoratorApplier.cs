@@ -9,7 +9,7 @@ namespace Windsor.Extension.Registration.Decorator
 {
     //TODO: Take o look at goood article http://kozmic.net/2009/11/15/castle-windsor-lazy-loading/
     //TODO: Take o look at goood code https://github.com/castleproject/Windsor/blob/master/src/Castle.Facilities.Synchronize/CreateOnUIThreadActivator.cs
-    public class DecoratorApplier: IResolveExtension
+    public class DecoratorApplier : IResolveExtension
     {
         private IKernel currentKernel;
         private readonly IList<Type> decoratorTypes;
@@ -54,8 +54,21 @@ namespace Windsor.Extension.Registration.Decorator
         private object ResolveDecorator(IKernel kernel, object instance, Type type)
         {
             Arguments arguments = new Arguments();
-            arguments.Add("decorated", instance);
-            var result = kernel.Resolve(type, arguments);
+            object result = null;
+
+            var mutualType = type.GetInterfaces().FirstOrDefault(t => t.IsInstanceOfType(instance));
+
+            if (mutualType != null)
+            {
+                arguments.AddTyped(mutualType, instance);
+            }
+
+            if (arguments.Count == 0)
+            {
+                arguments.AddNamed("decorated", instance);
+            }
+
+            result = kernel.Resolve(type, arguments);
             return result;
         }
 
